@@ -386,9 +386,20 @@ n*6+"1"*n*6)*2*n;c=(l1+s+l1+z+l1).reverse.to_i(2);b=[Marshal.dump(c)].pack("m").
 ```
 とこのように6が巨大になって行きます。
 
+
+## ソースの形状判定
+ソースを01のデータ形式に落とし込みMNISTの学習データを用いて予測した結果、全てのソースは6と判定された。
+```
+ubuntu@ubuntu-xenial:~/gensokyodaisu/nn$ python3 evaluate.py 
+Using TensorFlow backend.
+33/33 [==============================] - 0s 4ms/step
+Accuracy: 100.0%
+```
+
 ###実行環境
 ubuntu16.04.3LTS on VirtualBox
 ruby 2.3.1p112 (2016-04-26) [x86_64-linux-gnu]
+Python 3.5.2
 私の環境ではn=33くらいで再帰が止まりました
 
 ###その他
