@@ -74,9 +74,12 @@ def make_model():
   model.load_weights(os.path.join('./model', 'weights.hdf5'))
   return model
 
-def predict(model, x_test, y_test):
+def predict(model, files, x_test, y_test):
+  arr6 = model.predict_classes(x_test)
   res = model.evaluate(x_test, y_test)
   backend.clear_session()
+  for r, f in zip(arr6, files):
+    print('{}: {}'.format(f, r))
   print('Accuracy: {}%'.format(res[1]*100))
 
 def main():
@@ -88,7 +91,7 @@ def main():
     x_test = np.append(x_test, get_nda(f))
   x_test = x_test.reshape((len(files),28,28))
   y_test = np.full(len(x_test), 6)
-  predict(model, x_test, y_test)
+  predict(model, files, x_test, y_test)
 
 if __name__ == '__main__':
   main()
