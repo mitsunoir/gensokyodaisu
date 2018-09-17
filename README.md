@@ -395,10 +395,10 @@ Using TensorFlow backend.
 Accuracy: 100.0%
 ```
 
-###実行環境
-ubuntu16.04.3LTS on VirtualBox
-ruby 2.3.1p112 (2016-04-26) [x86_64-linux-gnu]
-Python 3.5.2
+### 実行環境
+ubuntu16.04.3LTS on VirtualBox  
+ruby 2.3.1p112 (2016-04-26) [x86_64-linux-gnu]  
+Python 3.5.2  
 私の環境ではn=33くらいで再帰が止まりました
 
 ### その他
